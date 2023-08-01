@@ -1,0 +1,117 @@
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ gfortran testri.f
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ ./a.out
+          12
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ cat testri.f
+       integer :: i
+       real    :: r
+       integer :: a
+       i = 4
+       r = 3.0
+       a = i * r
+       print *, a
+       end program
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ nano testri.f
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ gfortran testri.f
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ ./a.out
+          12           4   3.00000000    
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ cat testri.f
+       program testri
+!      A program to test multiplication of mixed data types.
+!      Programmer: Ian Martin Ajzenszmidt Version 1 2 August 2023.
+!      Melbourne Australia
+        
+       integer :: i
+       real    :: r
+       integer :: a
+       i = 4
+       r = 3.0
+       a = i * r
+       print *, a, i, r
+       end program
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ vim testri.f
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ gfortran testri.f
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ ./a.out
+          12           4   3.00000000       12.0000000    
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ cat testri.f
+       program testri
+!      A program to test multiplication of mixed data types.
+!      Programmer: Ian Martin Ajzenszmidt Version 1 2 August 2023.
+!      Melbourne Australia
+        
+       integer :: i
+       real    :: r
+       integer :: a
+       real    :: b
+       i = 4
+       r = 3.0
+       a = i * r
+       b = i * r
+       print *, a, i, r, b
+       end program
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ vim testri.f
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ gfortran testri.f
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ ./a.out
+ A program to test multiplication of mixed data types.
+ Programmer: Ian Martin Ajzenszmidt Version 1 2/08/2023
+  Melbourne Australia.
+ if the result is data type real, then result real
+ If the result is data type integer then result integer
+ integer a           12 integer i            4 real r    3.00000000    
+  real b    12.0000000    
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ cat testri.f
+       program testri
+!      A program to test multiplication of mixed data types.
+!      Programmer: Ian Martin Ajzenszmidt Version 1 2 August 2023.
+!      Melbourne Australia
+!      if the result is data type real, then the result is real.
+!      If the result is data type integer, then the result is integer.         
+       integer :: i
+       real    :: r
+       integer :: a
+       real    :: b
+       i = 4
+       r = 3.0
+       a = i * r
+       b = i * r
+       print *,"A program to test multiplication of mixed data types."
+       print *,"Programmer: Ian Martin Ajzenszmidt Version 1 2/08/2023"
+       print *," Melbourne Australia."
+       print *,"if the result is data type real, then result real"
+       print *,"If the result is data type integer then result integer" 
+       print *, "integer a ", a, "integer i ",i, "real r ", r
+       print *," real b ", b 
+       end program
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ sloccount testri.f
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/Downloads/testri.f to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+17      top_dir         fortran=17
+
+
+Totals grouped by language (dominant language first):
+fortran:         17 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 17
+Development Effort Estimate, Person-Years (Person-Months) = 0.00 (0.03)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.06 (0.69)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.05
+Total Estimated Cost to Develop                           = $ 375
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ 
